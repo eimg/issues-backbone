@@ -1,0 +1,41 @@
+<h2>New User</h2>
+
+<form action="#" id="new-user-form">
+  <div class="form-group">
+    <label for="">Full Name *</label>
+    <input type="text" class="form-control" placeholder="Full Name" id="full-name">
+  </div>
+  <div class="form-group">
+    <label for="">Login ID *</label>
+    <input type="text" class="form-control" placeholder="Login ID" id="login-id">
+    <span class="help-block">No space, small letters</span>
+  </div>
+  <div class="form-group"  placeholder="Email">
+    <label for="">Email *</label>
+    <input type="email" class="form-control" id="email" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="">Role *</label>
+    <select class="form-control" id="role">
+      <% _.each(app.userRole, function(name, value) { %>
+        <option value="<%= value %>"><%= name %></option>
+      <% }) %>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="">Password (twice) *</label>
+    <div class="row">
+      <div class="col-md-6">
+        <input type="password" class="form-control" placeholder="Password" id="password">
+      </div>
+      <div class="col-md-6">
+        <input type="password" class="form-control"  placeholder="Password Again" id="password-again">
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-lg" id="add-user">
+    <span class="glyphicon glyphicon-plus-sign"></span>
+    Add User
+  </button>
+</form>

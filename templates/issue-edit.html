@@ -1,0 +1,38 @@
+<form action="#" id="issue-edit-form">
+  <div class="alert alert-info">
+    Issue ID: <b><%= _id %></b>
+  </div>
+  <div class="form-group">
+    <label for="">Summary *</label>
+    <input type="text" class="form-control" placeholder="Summary" id="summary" value="<%= summary %>">
+  </div>
+
+  <div class="form-group">
+    <label for="">Detail / Steps to Reproduce</label>
+    <div class="form-control editor" placeholder="Detail / Step to reproduce" id="detail"><%= detail %></div>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-lg" id="update-issue">
+    <span class="glyphicon glyphicon-edit"></span>
+    Update
+  </button>
+  <button class="btn btn-link" id="close-edit">Cancel</button>
+</form>
+
+<script>
+  $(function() {
+    $('.editor').wysihtml5({
+      toolbar: {
+        "font-styles": false,
+        "emphasis": true,
+        "lists": true,
+        "html": false,
+        "link": true,
+        "image": false,
+        "color": false,
+        "blockquote": false,
+        "size": "sm"
+      }
+    });
+  });
+</script>
